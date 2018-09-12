@@ -1,8 +1,14 @@
 import React,{Component} from 'react'
 import './OrgChooser.css'
+const headers = {
+  headers: {
+    Authorization: "Bearer iCRJMQNlMestplr0pgqPSM5fmEYgxj"
+  }
+};
 export default class OrgChooser extends Component {
 
   constructor(){
+    super();
     this.state={
       orgunits:[]
     }
@@ -16,8 +22,8 @@ export default class OrgChooser extends Component {
     )
       .then(fetchData => fetchData.json())
       .then(jsonData => {
-        anything = jsonData.results;
-        ReactDOM.render(<App results={anything} />, rootElement);
+        //anything = jsonData.results;
+        //ReactDOM.render(<App results={anything} />, rootElement);
       })
       .catch(error => {
         console.log("Error", error);
